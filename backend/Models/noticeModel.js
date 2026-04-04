@@ -19,17 +19,11 @@ const noticeSchema=new Schema({
     required: true
   },
 
-  attachments: [
-    {
+  file: {
       fileName: String,
-      fileUrl: String
-    }
-  ],
+      fileId: mongoose.Schema.Types.ObjectId,
+    },
 
-  importantDates: {
-    startDate: Date,
-    endDate: Date
-  },
 
   isActive: {
     type: Boolean,
