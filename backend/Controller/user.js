@@ -59,3 +59,8 @@ module.exports.LogInUser=async(req,res)=>{
         res.status(500).json({message:"Server Error Come"});
     }
 }
+
+module.exports.Logout=(req,res)=>{
+    res.clearCookie('token');
+    res.status(200).json({message:"Logout Successfully"});
+}
