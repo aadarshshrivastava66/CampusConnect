@@ -33,7 +33,10 @@ const courseRoute=require('./Routes/course');
 app.use('/courses',courseRoute);
 
 const noticeRoute=require('./Routes/Notice');
-app.use('/notice',noticeRoute)
+app.use('/notice',noticeRoute);
+
+const adminRoute=require('./Routes/user');
+app.use('/admin',adminRoute);
 
 app.listen(8080,()=>{
     console.log("serever is Running on port 8080");
