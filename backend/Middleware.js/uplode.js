@@ -15,6 +15,10 @@ conn.once('open',()=>{
     console.log("Bucket ready to upload file")
 });
 
+if (!gridfsBucket) {
+    return res.status(500).json({ message: "File system not ready" });
+}
+
 //create a temporary storage in ram to store a files
 const storage=multer.memoryStorage();
 const upload=multer({storage})
@@ -22,7 +26,7 @@ const upload=multer({storage})
 const uploadFile=async(req,res,next)=>{
     if(!req.file){
         console.log("file not come");
-        next();
+        return next();
     }
     try{
         console.log(req.file)
