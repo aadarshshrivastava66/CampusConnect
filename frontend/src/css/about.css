@@ -1,0 +1,275 @@
+/* ================= ABOUT PAGE ================= */
+
+.about-page{
+  width: 100%;
+  background: #f5f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= HERO ================= */
+
+.about-hero{
+  width: 100%;
+  height: 55vh;
+
+  background:
+    linear-gradient(
+      rgba(10,20,40,0.75),
+      rgba(10,20,40,0.75)
+    ),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1400")
+    center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-overlay{
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.about-overlay h1{
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.about-overlay p{
+  font-size: 18px;
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+/* ================= ABOUT CONTAINER ================= */
+
+.about-container{
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  background: white;
+}
+
+/* ================= LEFT ================= */
+
+.about-left{
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-left img{
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+/* ================= RIGHT ================= */
+
+.about-right{
+  flex: 1;
+  min-width: 320px;
+}
+
+.section-tag{
+  background: #8b0f1a;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.about-right h2{
+  font-size: 45px;
+  color: #111827;
+  margin: 25px 0;
+  line-height: 1.3;
+}
+
+.about-right p{
+  color: #4b5563;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+/* ================= FEATURES ================= */
+
+.features-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.feature-box{
+  background: #f9fafb;
+  padding: 25px;
+  border-radius: 14px;
+  transition: 0.3s;
+  border: 1px solid #e5e7eb;
+}
+
+.feature-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature-box h3{
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.feature-box p{
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* ================= VISION MISSION ================= */
+
+.vision-section{
+  padding: 100px 7%;
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.vision-card,
+.mission-card{
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 45px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.vision-card:hover,
+.mission-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.vision-card h2,
+.mission-card h2{
+  color: #111827;
+  margin-bottom: 20px;
+  font-size: 34px;
+}
+
+.vision-card p,
+.mission-card p{
+  color: #4b5563;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+/* ================= STATS ================= */
+
+.about-stats{
+  background: #111827;
+  padding: 90px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stats-box{
+  flex: 1;
+  min-width: 220px;
+  background: rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.stats-box h2{
+  color: white;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.stats-box p{
+  color: #d1d5db;
+  font-size: 17px;
+}
+
+/* ================= RECRUITERS ================= */
+
+.recruiters-section{
+  padding: 100px 7%;
+  background: white;
+}
+
+.section-title{
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title h2{
+  font-size: 42px;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.section-title p{
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.recruiters-grid{
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recruiter-card{
+  background: #f3f4f6;
+  padding: 22px 40px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.recruiter-card:hover{
+  transform: translateY(-6px);
+  background: #e5e7eb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 992px){
+
+  .about-overlay h1{
+    font-size: 42px;
+  }
+
+  .about-right h2{
+    font-size: 36px;
+  }
+
+}
+
+@media(max-width: 768px){
+
+  .about-container,
+  .vision-section,
+  .recruiters-section{
+    padding: 70px 5%;
+  }
+
+  .about-overlay p{
+    font-size: 16px;
+  }
+
+  .section-title h2{
+    font-size: 34px;
+  }
+
+}

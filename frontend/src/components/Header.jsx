@@ -91,20 +91,10 @@ const Header = () => {
           <li className="dropdown-parent">
 
             <a href="/mycollege/about">
-              About <FaCaretDown />
+              About 
             </a>
 
-            <div className="dropdown">
-              <a href="/mycollege/about">About College</a>
-
-              <a href="/mycollege/about/vision">
-                Vision & Mission
-              </a>
-
-              <a href="/mycollege/about/director">
-                Director Message
-              </a>
-            </div>
+           
 
           </li>
 

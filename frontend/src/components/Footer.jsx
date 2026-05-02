@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="footer">
 
-      {/* ================= TOP FOOTER ================= */}
+
 
       <div className="footer-container">
 
@@ -34,19 +34,19 @@ const Footer = () => {
           {/* SOCIAL ICONS */}
           <div className="social-icons">
 
-            <a href="https://facebook.com">
+            <a href="#">
               <FaFacebookF />
             </a>
 
-            <a href="https://instagram.com">
+            <a href="#">
               <FaInstagram />
             </a>
 
-            <a href="https://linkedin.com">
+            <a href="#">
               <FaLinkedinIn />
             </a>
 
-            <a href="https://youtube.com">
+            <a href="#">
               <FaYoutube />
             </a>
 
