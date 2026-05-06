@@ -1,0 +1,139 @@
+/* ================= NOTICE PAGE ================= */
+
+.notice-page{
+  width: 100%;
+  min-height: 100vh;
+  background: #f3f3f3;
+  padding: 50px 6%;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.notice-tabs{
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+
+  margin-bottom: 55px;
+}
+
+
+
+.notice-tabs button{
+  position: relative;
+
+  background: #020b49;
+  color: white;
+
+  border: none;
+
+  padding: 18px 30px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.notice-tabs button:hover{
+  background: #8b0f1a;
+}
+
+/* ================= ACTIVE TAB ================= */
+
+.active-tab{
+  background: #8b0f1a !important;
+}
+
+/* ================= TRIANGLE ================= */
+
+.triangle{
+  position: absolute;
+
+  left: 50%;
+  bottom: -12px;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #8b0f1a;
+}
+
+/* ================= NOTICE LIST ================= */
+
+.notice-list{
+  width: 100%;
+}
+
+/* ================= NOTICE ITEM ================= */
+
+.notice-item{
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 28px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.notice-item:hover{
+  transform: translateX(8px);
+}
+
+/* ================= BULLET ================= */
+
+.bullet{
+  color: gray;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+/* ================= NOTICE TITLE ================= */
+
+.notice-item p{
+  color: #8b0f1a;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.notice-item p:hover{
+  text-decoration: underline;
+}
+
+
+
+.no-notice{
+  color: #555;
+}
+
+
+@media(max-width: 768px){
+
+  .notice-tabs{
+    flex-direction: column;
+  }
+
+  .notice-tabs button{
+    width: 100%;
+  }
+
+  .notice-item p{
+    font-size: 17px;
+  }
+
+}
