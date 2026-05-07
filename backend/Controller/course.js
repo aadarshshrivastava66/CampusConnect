@@ -1,6 +1,7 @@
 const courseModel = require("../Models/courseModel");
 
 module.exports.ugCourses = async (req, res) => {
+  console.log("request come")
   try {
     const ugCourses = await courseModel.find({ degreeType: "UG" });
     res.status(200).json(ugCourses);

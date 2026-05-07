@@ -10,6 +10,7 @@ import HomePage from './Pages/HomePage'
 import About from './components/About'
 import Contact from './components/Contact'
 import ViewNotice from './components/ViewNotice';
+import Programs from './components/Programs';
 
 createRoot(document.getElementById('root')).render(
      <BrowserRouter>
@@ -27,6 +28,13 @@ createRoot(document.getElementById('root')).render(
           path="/view-notice/:id"
           element={<ViewNotice/>}
         />
+
+       
+
+        <Route path="/mycollege/programs/:type" element={<Programs/>} />
+        <Route path="/mycollege/contact" element={<Contact/>} />
+        <Route path="/mycollege/about" element={<About/>} />
+        <Route path="/mycollege" element={<HomePage/>} />
 
       </Routes>
 

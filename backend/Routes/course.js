@@ -3,9 +3,9 @@ const router=express.Router();
 
 const courseController=require('../Controller/course');
 
-router.get('/ugcourses',courseController.ugCourses);
+router.get('/ug',courseController.ugCourses);
 
-router.get('/pgcourses',courseController.pgCourses);
+router.get('/pg',courseController.pgCourses);
 
 router.post('/newcourse',courseController.newCourse);
 
