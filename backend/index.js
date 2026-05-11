@@ -10,7 +10,6 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
@@ -37,6 +36,12 @@ app.use('/notice',noticeRoute);
 
 const adminRoute=require('./Routes/user');
 app.use('/admin',adminRoute);
+
+const chatbotRoute=require('./Routes/chatbot');
+app.use('/chatbot',chatbotRoute);
+
+const enquiryRoute = require("./Routes/enquiry");
+app.use("/enquiry", enquiryRoute);
 
 app.listen(8080,()=>{
     console.log("serever is Running on port 8080");

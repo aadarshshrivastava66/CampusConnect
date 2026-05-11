@@ -11,6 +11,9 @@ import About from './components/About'
 import Contact from './components/Contact'
 import ViewNotice from './components/ViewNotice';
 import Programs from './components/Programs';
+import Chatbot from './components/Chatbot';
+
+import Enquiry from './components/Enquary';
 
 createRoot(document.getElementById('root')).render(
      <BrowserRouter>
@@ -35,6 +38,9 @@ createRoot(document.getElementById('root')).render(
         <Route path="/mycollege/contact" element={<Contact/>} />
         <Route path="/mycollege/about" element={<About/>} />
         <Route path="/mycollege" element={<HomePage/>} />
+        <Route path="/mycollege/chat" element={<Chatbot/>} />
+        <Route path="/mycollege/enquiry" element={<Enquiry/>} />
+        
 
       </Routes>
 

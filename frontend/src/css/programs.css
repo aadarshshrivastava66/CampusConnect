@@ -38,7 +38,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ✨ premium look */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
 
 .programs-header p{

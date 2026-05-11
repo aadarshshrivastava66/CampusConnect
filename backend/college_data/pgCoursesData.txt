@@ -1,0 +1,105 @@
+PG COURSES
+{
+  courseId: "MT001",
+  courseName: "M.Tech in Computer Science Engineering",
+  courseCode: "MTECH-CSE",
+  degreeType: "PG",
+  department: "Computer Science Engineering",
+  description: "Advanced study in AI, ML, and distributed systems.",
+  duration: "2 Years",
+  totalSemesters: 4,
+  eligibility: {
+    qualification: "B.Tech in relevant field",
+    minPercentage: 65,
+    entranceExamRequired: true,
+    examName: "GATE"
+  },
+  fees: { totalFees: 200000, perYear: 100000, perSemester: 50000 },
+  seats: { totalSeats: 30, availableSeats: 12 },
+  HOD: { name: "Dr. Neha Gupta", email: "pgcse@college.edu" },
+  status: "Active"
+},
+
+{
+  courseId: "MT002",
+  courseName: "M.Tech in Data Science",
+  courseCode: "MTECH-DS",
+  degreeType: "PG",
+  department: "Data Science",
+  description: "Advanced analytics, big data, and AI.",
+  duration: "2 Years",
+  totalSemesters: 4,
+  eligibility: {
+    qualification: "B.Tech / B.Sc in relevant field",
+    minPercentage: 65,
+    entranceExamRequired: true,
+    examName: "GATE"
+  },
+  fees: { totalFees: 220000, perYear: 110000, perSemester: 55000 },
+  seats: { totalSeats: 25, availableSeats: 10 },
+  HOD: { name: "Dr. Arjun Mehta", email: "pgds@college.edu" },
+  status: "Active"
+},
+
+{
+  courseId: "MT003",
+  courseName: "M.Tech in Structural Engineering",
+  courseCode: "MTECH-SE",
+  degreeType: "PG",
+  department: "Civil Engineering",
+  description: "Focus on structural design and construction.",
+  duration: "2 Years",
+  totalSemesters: 4,
+  eligibility: {
+    qualification: "B.Tech in Civil Engineering",
+    minPercentage: 60,
+    entranceExamRequired: true,
+    examName: "GATE"
+  },
+  fees: { totalFees: 180000, perYear: 90000, perSemester: 45000 },
+  seats: { totalSeats: 20, availableSeats: 8 },
+  HOD: { name: "Dr. Suresh Patel", email: "pgcivil@college.edu" },
+  status: "Active"
+},
+
+{
+  courseId: "MT004",
+  courseName: "M.Tech in Power Systems",
+  courseCode: "MTECH-PS",
+  degreeType: "PG",
+  department: "Electrical Engineering",
+  description: "Focus on power generation and distribution.",
+  duration: "2 Years",
+  totalSemesters: 4,
+  eligibility: {
+    qualification: "B.Tech in Electrical Engineering",
+    minPercentage: 60,
+    entranceExamRequired: true,
+    examName: "GATE"
+  },
+  fees: { totalFees: 190000, perYear: 95000, perSemester: 47500 },
+  seats: { totalSeats: 25, availableSeats: 9 },
+  HOD: { name: "Dr. Vivek Singh", email: "pgee@college.edu" },
+  status: "Active"
+},
+
+{
+  courseId: "MT005",
+  courseName: "M.Tech in VLSI Design",
+  courseCode: "MTECH-VLSI",
+  degreeType: "PG",
+  department: "Electronics and Communication",
+  description: "Focus on chip design and semiconductor technology.",
+  duration: "2 Years",
+  totalSemesters: 4,
+  eligibility: {
+    qualification: "B.Tech in ECE",
+    minPercentage: 65,
+    entranceExamRequired: true,
+    examName: "GATE"
+  },
+  fees: { totalFees: 210000, perYear: 105000, perSemester: 52500 },
+  seats: { totalSeats: 20, availableSeats: 7 },
+  HOD: { name: "Dr. Neha Gupta", email: "pgece@college.edu" },
+  status: "Active"
+}
