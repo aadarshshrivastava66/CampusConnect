@@ -1,0 +1,76 @@
+.view-enquiry-container{
+  min-height: 100vh;
+  background: #f4f7fc;
+  padding: 40px;
+}
+
+.view-enquiry-container h1{
+  color: #0c2d57;
+  margin-bottom: 30px;
+  font-size: 38px;
+  text-align: center;
+}
+
+.table-wrapper{
+  width: 100%;
+  overflow-x: auto;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+thead{
+  background: #0c2d57;
+}
+
+thead th{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+th,
+td{
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr{
+  transition: 0.2s;
+}
+
+tbody tr:hover{
+  background: #f8f9fc;
+}
+
+td{
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media(max-width:768px){
+
+  .view-enquiry-container{
+    padding: 20px;
+  }
+
+  .view-enquiry-container h1{
+    font-size: 28px;
+  }
+
+  th,
+  td{
+    padding: 14px;
+    font-size: 14px;
+  }
+}

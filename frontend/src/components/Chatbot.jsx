@@ -1,12 +1,19 @@
 import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+import {
+    FaArrowUp
+} from "react-icons/fa6";
 
 import "../css/chatbot.css";
 
 function Chatbot() {
 
     const [message, setMessage] = useState("");
+
     const [chat, setChat] = useState([]);
+
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
@@ -17,7 +24,6 @@ function Chatbot() {
 
         const userMessage = message;
 
-        // show user message instantly
         setChat((prev) => [
             ...prev,
             {
@@ -27,17 +33,22 @@ function Chatbot() {
         ]);
 
         setMessage("");
+
         setLoading(true);
 
         try {
 
             const response = await fetch(
+
                 "http://localhost:8080/chatbot/chat",
+
                 {
                     method: "POST",
+
                     headers: {
                         "Content-Type": "application/json"
                     },
+
                     body: JSON.stringify({
                         message: userMessage
                     })
@@ -51,7 +62,9 @@ function Chatbot() {
                 const updatedChat = [...prev];
 
                 updatedChat[updatedChat.length - 1] = {
+
                     user: userMessage,
+
                     bot: data.answer || "No response"
                 };
 
@@ -67,7 +80,9 @@ function Chatbot() {
                 const updatedChat = [...prev];
 
                 updatedChat[updatedChat.length - 1] = {
+
                     user: userMessage,
+
                     bot: "Server Error"
                 };
 
@@ -75,12 +90,10 @@ function Chatbot() {
             });
 
         } finally {
+
             setLoading(false);
         }
     };
-
-    const fallbackMessage =
-        "Sorry, I am not able to answer your query. Please fill the enquiry form. Our team will definitely connect you within 24 hours.";
 
     return (
 
@@ -100,27 +113,39 @@ function Chatbot() {
                     >
 
                         <div className="user-message">
+
                             <b>You:</b> {msg.user}
+
                         </div>
 
                         <div className="bot-message">
+
                             <b>Bot:</b> {msg.bot}
 
-                            {/* Show enquiry link if fallback message appears */}
                             {msg.bot.includes("enquiry form") && (
-                                <div style={{ marginTop: "8px" }}>
+
+                                <div
+                                    style={{
+                                        marginTop: "8px"
+                                    }}
+                                >
+
                                     <span
                                         onClick={() =>
                                             navigate("/mycollege/enquary")
                                         }
+
                                         style={{
                                             color: "blue",
                                             textDecoration: "underline",
                                             cursor: "pointer"
                                         }}
                                     >
+
                                         Fill Form
+
                                     </span>
+
                                 </div>
                             )}
 
@@ -136,14 +161,20 @@ function Chatbot() {
                 <input
                     type="text"
                     className="chat-input"
-                    placeholder="Ask something..."
+                    placeholder="Ask anything..."
                     value={message}
                     disabled={loading}
+
                     onChange={(e) =>
                         setMessage(e.target.value)
                     }
+
                     onKeyDown={(e) => {
-                        if (e.key === "Enter" && !loading) {
+
+                        if (
+                            e.key === "Enter" &&
+                            !loading
+                        ) {
                             sendMessage();
                         }
                     }}
@@ -154,7 +185,9 @@ function Chatbot() {
                     onClick={sendMessage}
                     disabled={loading}
                 >
-                    {loading ? "Please Wait..." : "Send"}
+
+                    <FaArrowUp />
+
                 </button>
 
             </div>

@@ -18,6 +18,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import File from './components/File';
+import ViewEnquiry from './components/viewEnquary';
 
 createRoot(document.getElementById('root')).render(
   <AuthProvider>
@@ -36,13 +37,11 @@ createRoot(document.getElementById('root')).render(
           path="/view-notice/:id"
           element={<ViewNotice/>}
         />
-
-       
-
         <Route path="/mycollege/programs/:type" element={<Programs/>} />
         <Route path="/mycollege/contact" element={<Contact/>} />
         <Route path="/mycollege/about" element={<About/>} />
         <Route path="/mycollege" element={<HomePage/>} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/mycollege/chat" element={<Chatbot/>} />
         <Route path="/mycollege/enquiry" element={<Enquiry/>} />
         <Route path="/mycollege/register" element={<Register/>} />
@@ -52,6 +51,7 @@ createRoot(document.getElementById('root')).render(
           element={<Dashboard/>}
         />
         <Route path="/mycollege/uploadNotice" element={<File/>} />
+        <Route path="/mycollege/viewenquiry" element={<ViewEnquiry/>} />
 
       </Routes>
 

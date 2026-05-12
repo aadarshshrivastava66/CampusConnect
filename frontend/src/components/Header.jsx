@@ -132,6 +132,12 @@ const Header = () => {
               Admission Enquiry
             </a>
           </li>
+           {user ? (
+          <li>
+            <a href="/dashboard">
+              Dashboard
+            </a>
+          </li>):(<li></li>)}
         </ul>
 
         {/* RIGHT SECTION */}

@@ -1,8 +1,19 @@
+import "../css/dashboard.css";
+
+import {
+  Link,
+  useNavigate
+} from "react-router-dom";
+
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
-
 import { useAuth } from "../context/AuthContext";
+
+import {
+  FaFileCirclePlus,
+  FaClipboardList,
+  FaRightFromBracket
+} from "react-icons/fa6";
 
 export default function Dashboard() {
 
@@ -10,7 +21,6 @@ export default function Dashboard() {
 
   const navigate = useNavigate();
 
-  // Logout
   const handleLogout = async () => {
 
     try {
@@ -36,31 +46,58 @@ export default function Dashboard() {
 
   return (
 
-    <div
-      style={{
-        padding: "40px",
-        textAlign: "center"
-      }}
-    >
+    <div className="dashboard-container">
 
-      <h1>
-        Welcome To Dashboard
-      </h1>
+      <div className="dashboard-top">
 
-      <h2>
-        Role : {user?.role}
-      </h2>
+        
 
-      <button
-        onClick={handleLogout}
-        style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          cursor: "pointer"
-        }}
-      >
-        Logout
-      </button>
+          <h1 className="dashboard-title">
+            Admin Dashboard
+          </h1>
+
+        
+
+
+      </div>
+
+      <div className="dashboard-cards">
+
+        <Link
+          to="/mycollege/uploadNotice"
+          className="dashboard-card"
+        >
+
+          <FaFileCirclePlus className="dashboard-icon" />
+
+          <h2>
+            Add New File
+          </h2>
+
+          <p>
+            Upload new notice, PDF, document or file.
+          </p>
+
+        </Link>
+
+        <Link
+          to="/mycollege/viewenquiry"
+          className="dashboard-card"
+        >
+
+          <FaClipboardList className="dashboard-icon" />
+
+          <h2>
+            View Admission Enquiry
+          </h2>
+
+          <p>
+            Check all admission enquiry submissions.
+          </p>
+
+        </Link>
+
+      </div>
 
     </div>
   );

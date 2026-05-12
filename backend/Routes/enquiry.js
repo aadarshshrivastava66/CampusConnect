@@ -9,9 +9,9 @@ const {
 
 
 // Create Enquiry
-router.post("/", createEnquiry);
+router.post("/",createEnquiry);
 
 // Get All Enquiries
-router.get("/", getAllEnquiries);
+router.get("/",getAllEnquiries);
 
 module.exports = router;
