@@ -11,12 +11,30 @@ import {
   FaHouse,
   FaUserShield,
   FaCaretDown,
+  FaRightFromBracket,
 } from "react-icons/fa6";
 
+// IMPORT AUTH CONTEXT
+import { useAuth } from "../context/AuthContext";
+
 const Header = () => {
+
+  // GET USER & LOGOUT FROM CONTEXT
+  const { user, logout } = useAuth();
+
+  // HANDLE LOGOUT
+  const handleLogout = () => {
+
+    logout();
+
+    // redirect after logout
+    window.location.href = "/mycollege/login";
+  };
+
   return (
     <>
       <header className="top-header">
+
         {/* Logo */}
         <div className="logo">
           <FaGraduationCap className="logo-icon" />
@@ -29,6 +47,7 @@ const Header = () => {
 
         {/* Contact Info */}
         <div className="header-info">
+
           {/* Location */}
           <div className="info-box">
             <FaLocationDot className="info-icon" />
@@ -61,8 +80,11 @@ const Header = () => {
         </div>
       </header>
 
+      {/* NAVBAR */}
       <nav className="navbar">
+
         <ul className="nav-links">
+
           {/* Home */}
           <li>
             <a href="/mycollege">
@@ -78,14 +100,19 @@ const Header = () => {
 
           {/* Programs */}
           <li className="dropdown-parent">
+
             <Link to="/mycollege/programs">
               Programs <FaCaretDown />
             </Link>
 
             <div className="dropdown">
-              <Link to="/mycollege/programs/ug">UG Programs</Link>
+              <Link to="/mycollege/programs/ug">
+                UG Programs
+              </Link>
 
-              <Link to="/mycollege/programs/pg">PG Programs</Link>
+              <Link to="/mycollege/programs/pg">
+                PG Programs
+              </Link>
             </div>
           </li>
 
@@ -98,20 +125,41 @@ const Header = () => {
           <li>
             <a href="/mycollege/contact">Contact</a>
           </li>
+
+          {/* Enquiry */}
           <li>
-            <a href="/mycollege/enquiry">Admission Enquiry</a>
+            <a href="/mycollege/enquiry">
+              Admission Enquiry
+            </a>
           </li>
         </ul>
 
-        {/* Right Section */}
+        {/* RIGHT SECTION */}
         <div className="right-section">
-          {/* Admin Login */}
-          <a href="/mycollege/admin-login" className="login">
-            <FaUserShield />
-            Admin Login
-          </a>
 
-          {/* Admission Enquiry */}
+          {/* IF USER LOGGED IN */}
+          {user ? (
+
+            <button
+              onClick={handleLogout}
+              className="login logout-btn"
+            >
+              <FaRightFromBracket />
+              Logout
+            </button>
+
+          ) : (
+
+            <a
+              href="/mycollege/login"
+              className="login"
+            >
+              <FaUserShield />
+              Admin Login
+            </a>
+
+          )}
+
         </div>
       </nav>
     </>

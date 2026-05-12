@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root{
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,9 +23,11 @@ body{
   width: 100%;
   background: #fff;
   border-top: 4px solid #0c2d57;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 20px 60px;
   flex-wrap: wrap;
 }
@@ -79,18 +88,22 @@ body{
   width: 100%;
   background: #fff;
   border-top: 1px solid #ddd;
+
   padding: 0 60px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   flex-wrap: wrap;
 }
 
 .nav-links{
   list-style: none;
+
   display: flex;
-  gap: 35px;
   align-items: center;
+  gap: 35px;
 }
 
 .nav-links li{
@@ -100,17 +113,15 @@ body{
 .nav-links a{
   text-decoration: none;
   color: #555;
+
   font-size: 18px;
   font-weight: 600;
+
   padding: 25px 0;
+
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover{
-  color: #8b0f1a;
 }
 
 /* ================= DROPDOWN ================= */
@@ -119,10 +130,15 @@ body{
   position: absolute;
   top: 100%;
   left: 0;
+
   background: #fff;
+
   min-width: 220px;
+
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
   display: none;
+
   z-index: 100;
 }
 
@@ -144,26 +160,69 @@ body{
   gap: 30px;
 }
 
-.login{
-  color: #8b0f1a !important;
-  font-size: 18px !important;
-  font-weight: bold;
+/* ================= LOGIN + LOGOUT ================= */
+
+.login,
+.logout-btn{
+  border: none;
+  background: none !important;
+
+  outline: none;
+  box-shadow: none;
+
+  text-decoration: none;
+
+  color: #555;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  padding: 25px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
 }
+
+/* REMOVE ALL EFFECTS */
+
+.login:hover,
+.login:focus,
+.login:active,
+.logout-btn:hover,
+.logout-btn:focus,
+.logout-btn:active{
+  background: none !important;
+  color: #555;
+  outline: none;
+  box-shadow: none;
+}
+
+/* ================= ADMISSION BUTTON ================= */
 
 .admission-btn{
   background: #8b0f1a;
   color: #fff;
+
   border: none;
+
   padding: 14px 32px;
+
   border-radius: 40px;
+
   font-size: 16px;
   font-weight: bold;
+
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.admission-btn:hover{
-  background: #650913;
+/* ================= HERO ================= */
+
+.hero{
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -191,31 +250,4 @@ body{
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root{
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* FULL WIDTH HEADER */
-.top-header{
-  width: 100%;
-}
-
-.navbar{
-  width: 100%;
-}
-
-/* FULL WIDTH HERO */
-.hero{
-  width: 100%;
-  min-height: 100vh;
 }

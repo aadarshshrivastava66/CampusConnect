@@ -1,139 +1,278 @@
-/* ================= NOTICE PAGE ================= */
+/* =========================
+   NOTICE PAGE
+========================= */
 
 .notice-page{
+
   width: 100%;
   min-height: 100vh;
-  background: #f3f3f3;
+
   padding: 50px 6%;
+
+  background: #f5f7fb;
+
   font-family: "Poppins", sans-serif;
 }
 
-
+/* =========================
+   NOTICE TABS
+========================= */
 
 .notice-tabs{
-  display: flex;
-  flex-wrap: wrap;
 
-  justify-content: center;
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  flex-wrap: nowrap !important;
+
+  justify-content: flex-start;
+
   align-items: center;
 
-  gap: 4px;
+  gap: 10px;
 
-  margin-bottom: 55px;
+  overflow-x: auto;
+
+  white-space: nowrap;
+
+  width: 100%;
+
+  margin-bottom: 50px;
+
+  padding-bottom: 10px;
+
+  scrollbar-width: none;
 }
 
+/* Hide Scrollbar */
 
+.notice-tabs::-webkit-scrollbar{
+  display: none;
+}
 
+/* =========================
+   TAB BUTTON
+========================= */
 .notice-tabs button{
-  position: relative;
 
-  background: #020b49;
-  color: white;
+  position: relative;
 
   border: none;
 
-  padding: 18px 30px;
+  padding: 15px 24px;
 
-  font-size: 18px;
+  background: #081c5c;
+
+  color: white;
+
+  font-size: 16px;
+
   font-weight: 600;
+
+  border-radius: 8px;
 
   cursor: pointer;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
+
+  white-space: nowrap;
 }
 
 .notice-tabs button:hover{
-  background: #8b0f1a;
+
+  background: #a41224;
+
+  transform: translateY(-2px);
 }
 
-/* ================= ACTIVE TAB ================= */
+/* =========================
+   ACTIVE BUTTON
+========================= */
 
-.active-tab{
-  background: #8b0f1a !important;
+.notice-tabs .active-tab{
+
+  background: #a41224;
 }
 
-/* ================= TRIANGLE ================= */
+/* =========================
+   TRIANGLE
+========================= */
 
 .triangle{
+
   position: absolute;
 
   left: 50%;
-  bottom: -12px;
+  bottom: -10px;
 
   transform: translateX(-50%);
 
   width: 0;
   height: 0;
 
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 12px solid #8b0f1a;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-top: 10px solid #a41224;
 }
 
-/* ================= NOTICE LIST ================= */
+/* =========================
+   NOTICE LIST
+========================= */
 
 .notice-list{
+
   width: 100%;
+
+  max-width: 1100px;
+
+  margin: auto;
 }
 
-/* ================= NOTICE ITEM ================= */
+/* =========================
+   NOTICE ITEM
+========================= */
 
 .notice-item{
+
   display: flex;
+
   align-items: flex-start;
 
-  gap: 18px;
+  gap: 15px;
 
-  margin-bottom: 28px;
+  padding: 18px 20px;
+
+  margin-bottom: 18px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.05);
 
   cursor: pointer;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .notice-item:hover{
+
   transform: translateX(8px);
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* ================= BULLET ================= */
+/* =========================
+   BULLET
+========================= */
 
 .bullet{
-  color: gray;
-  font-size: 40px;
-  line-height: 20px;
+
+  color: #a41224;
+
+  font-size: 28px;
+
+  line-height: 25px;
+
+  flex-shrink: 0;
 }
 
-/* ================= NOTICE TITLE ================= */
+/* =========================
+   NOTICE TITLE
+========================= */
 
 .notice-item p{
-  color: #8b0f1a;
-  font-size: 20px;
+
+  color: #222;
+
+  font-size: 18px;
+
   line-height: 1.7;
+
+  font-weight: 500;
 }
 
-.notice-item p:hover{
-  text-decoration: underline;
+.notice-item:hover p{
+
+  color: #a41224;
 }
 
-
+/* =========================
+   NO NOTICE
+========================= */
 
 .no-notice{
-  color: #555;
+
+  text-align: center;
+
+  color: #666;
+
+  font-size: 24px;
+
+  margin-top: 60px;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width: 768px){
 
+  .notice-page{
+
+    padding: 40px 15px;
+  }
+
   .notice-tabs{
-    flex-direction: column;
+
+    gap: 8px;
   }
 
   .notice-tabs button{
-    width: 100%;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+  }
+
+  .notice-item{
+
+    padding: 15px;
   }
 
   .notice-item p{
-    font-size: 17px;
+
+    font-size: 16px;
+  }
+
+}
+
+@media(max-width: 480px){
+
+  .notice-tabs button{
+
+    font-size: 13px;
+
+    padding: 10px 14px;
+  }
+
+  .notice-item{
+
+    gap: 10px;
+  }
+
+  .bullet{
+
+    font-size: 22px;
+  }
+
+  .notice-item p{
+
+    font-size: 15px;
   }
 
 }

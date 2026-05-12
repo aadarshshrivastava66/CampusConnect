@@ -7,7 +7,7 @@ router.post('/uploadenotice',upload.single("file"),uploadFile,noticeController.u
 
 router.get('/generalnotice',noticeController.viewGenralNotice);
 
-router.get('/feesnotice',noticeController.viewFeesNotice);
+router.get('/feenotice',noticeController.viewFeesNotice);
 
 router.get('/scholarshipnotice',noticeController.viewScholarshipNotice);
 
