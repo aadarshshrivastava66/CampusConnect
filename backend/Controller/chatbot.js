@@ -27,7 +27,13 @@ const askChatbot = async (req, res) => {
             "hello",
             "hlo",
             "hey",
-            "hy"
+            "hy",
+            "hii",
+            "Hii",
+            "HY",
+            "Hello",
+            "Hlo",
+            "Hey"
         ];
 
         if (

@@ -1,34 +1,67 @@
-body{
-    background-color: #f4f6f9;
-    font-family: Arial, sans-serif;
+.chatbot-toggle{
+
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
 }
 
 .chat-container{
-    width: 500px;
 
-    margin: 40px auto;
+    position: fixed;
+
+    bottom: 100px;
+
+    right: 25px;
+
+    width: 380px;
 
     background: white;
 
     border-radius: 18px;
 
-    padding: 25px;
+    padding: 20px;
 
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+
+    z-index: 9999;
 }
 
 .chat-title{
+
     text-align: center;
 
     color: #333;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .chat-box{
-    height: 500px;
+
+    height: 400px;
 
     overflow-y: auto;
 
@@ -46,6 +79,7 @@ body{
 }
 
 .user-message{
+
     background-color: #2563eb;
 
     color: white;
@@ -66,6 +100,7 @@ body{
 }
 
 .bot-message{
+
     background-color: #e9ecef;
 
     color: black;
@@ -86,6 +121,7 @@ body{
 }
 
 .input-area{
+
     display: flex;
 
     align-items: center;
@@ -102,6 +138,7 @@ body{
 }
 
 .chat-input{
+
     flex: 1;
 
     background: transparent;
@@ -122,6 +159,7 @@ body{
 }
 
 .send-btn{
+
     width: 42px;
 
     height: 42px;
@@ -148,22 +186,28 @@ body{
 }
 
 .send-btn:disabled{
+
     opacity: 0.5;
+
     cursor: not-allowed;
 }
 
 @media(max-width:600px){
 
     .chat-container{
-        width: 95%;
-        padding: 18px;
+
+        width: 90%;
+
+        right: 5%;
+
+        bottom: 90px;
     }
 
     .chat-box{
-        height: 420px;
+        height: 320px;
     }
 
     .chat-title{
-        font-size: 24px;
+        font-size: 20px;
     }
 }

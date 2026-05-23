@@ -1,10 +1,12 @@
-import { useState } from "react";
-
-import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
 import {
-    FaArrowUp
+    FaArrowUp,
+    FaComments,
+    FaXmark
 } from "react-icons/fa6";
+
+import { useNavigate } from "react-router-dom";
 
 import "../css/chatbot.css";
 
@@ -16,7 +18,22 @@ function Chatbot() {
 
     const [loading, setLoading] = useState(false);
 
+    const [open, setOpen] = useState(false);
+
     const navigate = useNavigate();
+
+    // Latest Message Ref
+    const latestMessageRef = useRef(null);
+
+    // Auto Scroll To Latest Message
+    useEffect(() => {
+
+        latestMessageRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, [chat]);
 
     const sendMessage = async () => {
 
@@ -24,6 +41,7 @@ function Chatbot() {
 
         const userMessage = message;
 
+        // Add user message instantly
         setChat((prev) => [
             ...prev,
             {
@@ -39,9 +57,7 @@ function Chatbot() {
         try {
 
             const response = await fetch(
-
                 "http://localhost:8080/chatbot/chat",
-
                 {
                     method: "POST",
 
@@ -62,9 +78,7 @@ function Chatbot() {
                 const updatedChat = [...prev];
 
                 updatedChat[updatedChat.length - 1] = {
-
                     user: userMessage,
-
                     bot: data.answer || "No response"
                 };
 
@@ -80,9 +94,7 @@ function Chatbot() {
                 const updatedChat = [...prev];
 
                 updatedChat[updatedChat.length - 1] = {
-
                     user: userMessage,
-
                     bot: "Server Error"
                 };
 
@@ -97,102 +109,143 @@ function Chatbot() {
 
     return (
 
-        <div className="chat-container">
+        <>
 
-            <h2 className="chat-title">
-                Campus Connect Chatbot
-            </h2>
+            {/* Floating Chat Button */}
 
-            <div className="chat-box">
+            <button
+                className="chatbot-toggle"
+                onClick={() => setOpen(!open)}
+            >
 
-                {chat.map((msg, index) => (
+                {
+                    open
+                        ? <FaXmark />
+                        : <FaComments />
+                }
 
-                    <div
-                        key={index}
-                        className="chat-message-wrapper"
-                    >
+            </button>
 
-                        <div className="user-message">
+            {/* Chat Window */}
 
-                            <b>You:</b> {msg.user}
+            {
+                open && (
+
+                    <div className="chat-container">
+
+                        <h2 className="chat-title">
+                            Campus Connect
+                        </h2>
+
+                        <div className="chat-box">
+
+                            {
+                                chat.map((msg, index) => (
+
+                                    <div
+                                        key={index}
+                                        className="chat-message-wrapper"
+                                        ref={
+                                            index === chat.length - 1
+                                                ? latestMessageRef
+                                                : null
+                                        }
+                                    >
+
+                                        {/* User Message */}
+
+                                        <div className="user-message">
+
+                                            {msg.user}
+
+                                        </div>
+
+                                        {/* Bot Message */}
+
+                                        <div className="bot-message">
+
+                                            <b>Assistant:</b> {msg.bot}
+
+                                            {
+                                                msg.bot.includes("enquiry form") && (
+
+                                                    <div
+                                                        style={{
+                                                            marginTop: "8px"
+                                                        }}
+                                                    >
+
+                                                        <span
+                                                            onClick={() =>
+                                                                navigate("/mycollege/enquiry")
+                                                            }
+
+                                                            style={{
+                                                                color: "blue",
+                                                                textDecoration: "underline",
+                                                                cursor: "pointer"
+                                                            }}
+                                                        >
+
+                                                            Fill Form
+
+                                                        </span>
+
+                                                    </div>
+                                                )
+                                            }
+
+                                        </div>
+
+                                    </div>
+                                ))
+                            }
 
                         </div>
 
-                        <div className="bot-message">
+                        {/* Input Area */}
 
-                            <b>Bot:</b> {msg.bot}
+                        <div className="input-area">
 
-                            {msg.bot.includes("enquiry form") && (
+                            <input
+                                type="text"
+                                className="chat-input"
+                                placeholder="Ask anything..."
+                                value={message}
+                                disabled={loading}
 
-                                <div
-                                    style={{
-                                        marginTop: "8px"
-                                    }}
-                                >
+                                onChange={(e) =>
+                                    setMessage(e.target.value)
+                                }
 
-                                    <span
-                                        onClick={() =>
-                                            navigate("/mycollege/enquary")
-                                        }
+                                onKeyDown={(e) => {
 
-                                        style={{
-                                            color: "blue",
-                                            textDecoration: "underline",
-                                            cursor: "pointer"
-                                        }}
-                                    >
+                                    if (
+                                        e.key === "Enter" &&
+                                        !loading
+                                    ) {
+                                        sendMessage();
+                                    }
+                                }}
+                            />
 
-                                        Fill Form
+                            <button
+                                className="send-btn"
+                                onClick={sendMessage}
+                                disabled={loading}
+                            >
 
-                                    </span>
+                                <FaArrowUp />
 
-                                </div>
-                            )}
+                            </button>
 
                         </div>
 
                     </div>
-                ))}
+                )
+            }
 
-            </div>
-
-            <div className="input-area">
-
-                <input
-                    type="text"
-                    className="chat-input"
-                    placeholder="Ask anything..."
-                    value={message}
-                    disabled={loading}
-
-                    onChange={(e) =>
-                        setMessage(e.target.value)
-                    }
-
-                    onKeyDown={(e) => {
-
-                        if (
-                            e.key === "Enter" &&
-                            !loading
-                        ) {
-                            sendMessage();
-                        }
-                    }}
-                />
-
-                <button
-                    className="send-btn"
-                    onClick={sendMessage}
-                    disabled={loading}
-                >
-
-                    <FaArrowUp />
-
-                </button>
-
-            </div>
-
-        </div>
+        </>
     );
 }
 
